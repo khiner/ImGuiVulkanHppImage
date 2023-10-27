@@ -265,7 +265,7 @@ void VulkanContext::CreateTriangleContext(uint32_t width, uint32_t height) {
     barrier.subresourceRange.layerCount = 1;
 
     const auto &command_buffer = TC.CommandBuffers[0];
-    command_buffer->begin(vk::CommandBufferBeginInfo{});
+    command_buffer->begin({vk::CommandBufferUsageFlagBits::eOneTimeSubmit});
     command_buffer->pipelineBarrier(
         vk::PipelineStageFlagBits::eTopOfPipe,
         vk::PipelineStageFlagBits::eColorAttachmentOutput,
@@ -278,6 +278,11 @@ void VulkanContext::CreateTriangleContext(uint32_t width, uint32_t height) {
     command_buffer->draw(3, 1, 0, 0);
     command_buffer->endRenderPass();
     command_buffer->end();
+
+    vk::SubmitInfo submit;
+    submit.setCommandBuffers(command_buffer.get());
+    Queue.submit(submit);
+    Device->waitIdle();
 
     vk::SamplerCreateInfo sampler_info;
     sampler_info.magFilter = vk::Filter::eLinear;

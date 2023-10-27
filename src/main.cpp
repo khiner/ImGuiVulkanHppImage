@@ -280,7 +280,6 @@ int main(int, char **) {
             PushStyleVar(ImGuiStyleVar_WindowPadding, {0, 0});
             Begin(Windows.Scene.Name, &Windows.Scene.Visible);
             Image((ImTextureID)VC.TC.DescriptorSet, ImGui::GetContentRegionAvail());
-            // Image(ImGui::GetIO().Fonts->TexID, ImGui::GetContentRegionAvail());
             End();
             PopStyleVar();
         }
