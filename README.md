@@ -2,7 +2,9 @@
 
 A demo application for rendering a triangle with Vulkan-Hpp into a docked ImGui window via `vk::Image->Texture->ImGui::Image`, using SDL3 backend.
 
-## Build/run
+![](DemoTriangle.png)
+
+## Clone/build/run
 
 - Clone recursively
   ```shell
@@ -13,4 +15,10 @@ A demo application for rendering a triangle with Vulkan-Hpp into a docked ImGui 
   For example, I have the following in my `.zshrc` file:
   ```shell
   export VULKAN_SDK="$HOME/VulkanSDK/1.3.261.1/macOS"
+  ```
+- Build/Run
+  ```shell
+  $ mkdir build && cd build && cmake ..
+  $ make
+  $ ./ImGuiVulkanHppImage
   ```
