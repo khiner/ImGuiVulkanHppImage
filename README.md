@@ -14,7 +14,7 @@ A demo application for rendering a triangle with Vulkan-Hpp into a docked ImGui 
 - Set the `VULKAN_SDK` environment variable.
   For example, I have the following in my `.zshrc` file:
   ```shell
-  export VULKAN_SDK="$HOME/VulkanSDK/1.3.261.1/macOS"
+  export VULKAN_SDK="$HOME/VulkanSDK/{version}/macOS"
   ```
 - Build/Run
   ```shell
