@@ -1,6 +1,6 @@
 # ImGuiVulkanHppImage
 
-A demo application for rendering a triangle with Vulkan-Hpp into a docked ImGui window via `vk::Image->Texture->ImGui::Image`, using SDL3 backend.
+A demo application for rendering a triangle with Vulkan-Hpp into a docked ImGui window via `Shaders->vk::Image->MSAA->Texture->ImGui::Image`, with an SDL3 backend.
 
 ![](DemoTriangle.png)
 
@@ -12,7 +12,7 @@ A demo application for rendering a triangle with Vulkan-Hpp into a docked ImGui 
   ```
 - Download and install the latest SDK from https://vulkan.lunarg.com/sdk/home
 - Set the `VULKAN_SDK` environment variable.
-  For example, I have the following in my `.zshrc` file:
+  For example, add the following to your `.zshrc` file:
   ```shell
   export VULKAN_SDK="$HOME/VulkanSDK/{version}/macOS"
   ```
